@@ -1,0 +1,126 @@
+## What does an Data Engineer do? Some of the responsibilities of a Data Engineer(DE)
+
+### 1. They move data between systems
+
+	It usually involves the Extract Transform Load process (also ELT)
+	
+	Extract: Data is extracted from various sources. These include APIs, cloud storage, databases, different static files etc
+	
+	Transform: Next step is transforming the data. Some of the most common transformations include:
+		mapping
+		filtering
+		enrichment
+		changing the structure of the data (eg denormalizing the data)
+		aggregating
+		
+		+++
+		
+	Load: Here data is loaded into the destination system. This system can be:
+		a cloud storage file system,
+		a data warehouse,
+		and/or cache database...
+		
+	
+	Some of the common tools/frameworks that are used by a DE: Pandas, Spark, Dask, Flink, Beam, Debezium, Kafka, Docker, Kubernetes
+	
+	
+	
+### 2. They manage data warehouse 
+
+	Quite often, most company's data land within a data warehouse. Therefore, DE's responsibilities here are:
+	
+	* Warehouse data modeling: Model the data for analytical queries, which are usually aggregation queries on large tables. Modeling here,
+	involves applying appropriate partitions, handling fact and dimension tables, etc.
+	+++
+	
+	* Warehouse performance: DE make sure that the queries are fast and the warehouse can scale as needed
+	+++
+	
+	* Data quality: Ensuring data quality within the data warehouse
+	
+	
+	Some common modelling techniques: Kimball modelling, Data Vault, Data Lake
+	
+	
+	++++++
+	
+	Common frameworks: Great expectations, dbt for data quality
+	
+	Common warehouses: Snowflake, Redshift, BQ, Clickhouse, Postgres
+	
+
+
+### 3. Schedule, execute, and monitor data pipelines
+
+	DE are also responsible for scheduling the ETL pipelines, making sure they run without any issue and monitoring them.
+	
+	* Scheduling data pipelines to be run at a certain schedule or in response to some event.
+	
+	* Executing data pipelines and ensuring that they can scale, have the right permisions etc.
+	
+	* Monitoring data pipelines for failures, deadlocks, and long-running tasks.
+	
+	* Managing metadata such as time of the run, end to end time taken, failure reasons etc.
+	
+	
+	Common frameworks: Airflow, dbt, Prefec, Dagster, AWS Glue, AWS Lambda, Steaming pipeline using Flink/Spark/Beam
+	
+	Common databases: MySQL, Postgres, Elastic seach and data warehouses
+	
+	Common storage systems: AWS S3, GCP cloud store
+	
+	
+	
+	
+### 4. Serve data to the end-users
+
+	Once the data is available in the warehoues, it's time to be server to the end-user. This can be analysts, an app, external clients etc. 
+	Depending on the end-user, the DE may have to set up:
+	
+	* Data visualization/Dashboard tool: Tool used by humans to analyze and create pretty charts that can be shard easily
+	
+	* Permissions for the data: If it's a table, then granting correct permissions to your applications or end-users. If it's in cloud storage, 
+	granting cloud users appropriate permissions etc.
+	
+	* Data endpoints (APIs): Some application/external clients may need API-based access to your data. In such cases, a server to send data 
+	via an API endpoint will need to be set up.
+	
+	*Data dumps for clients: Some clients may require data dumps for your system. In such cases, you will have to set up a data pipeline to facilitate this.
+	+++
+	
+	Common tools/languages: Looker, Tableau/Power BI, Metabase, Superset, role-based permissions(for your system), Python/Scala/Javva for API endpoints, pipelines tools for client data dumps
+	
+	
+	
+	
+### 5. Data strategy for the company
+
+	Data engineers are involved in coming up with data strategy for the company. This involves
+	
+	* Deciding what data to collect, how to collect it, and store it securely.
+	
+	* Evolving data architecture for custom data needs. 
+	+++
+	
+	* Educating end users on how to use data effectively
+	
+	* Deciding what data to share with external clients
+	
+	Common tools/frameworks: Confluence, google docs, RFC documents, brainstormings, meetings
+	
+	
+	
+
+### 6. Deploy ML models to production
+
+	Data scientists and analysts develop sophisticated models that closely model the working of a specific business process. When it's time 
+	to deploy thes models, data engineers are usually the ones who optimize them to be used in a production environment.
+	
+	* Optimizing training and interface: Setting up a batch/online learning pipelines. Ensuring the model is appropriately sized. 
+	
+	* Setting up the monitoring: Setting up monitoring and logging systems for the ML model.
+	
+	
+	
+	
+The main objective of the data engineering team(s) is to enable company-wide use of data for decision making.
